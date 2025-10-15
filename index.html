@@ -4,149 +4,188 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Manish Subhash Kadam — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="Portfolio of Manish Subhash Kadam — CYSE 3rd year.">
+  <meta name="description" content="Portfolio of Manish Subhash Kadam — CYSE 3rd year student passionate about cybersecurity and web development.">
 </head>
 <body>
   <header class="nav">
     <div class="brand">
       <div class="logo" aria-hidden="true">
-        <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48"/></svg>
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="48"/>
+          <path d="M30 50 L45 35 L60 50 L45 65 Z" fill="var(--accent)" opacity="0.3"/>
+        </svg>
       </div>
       <div class="brand-text">
         <h1>Manish Kadam</h1>
         <p>CYSE — 3rd year</p>
       </div>
     </div>
-    <nav class="menu">
+    
+    <button id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <nav class="menu" id="mainMenu">
       <a data-page="home" class="active">Home</a>
       <a data-page="about">About</a>
       <a data-page="projects">Projects</a>
       <a data-page="articles">Articles</a>
       <a data-page="contact">Contact</a>
     </nav>
-    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌓</button>
   </header>
 
   <main id="app">
-    <!-- Pages injected here -->
+    <!-- Home Page -->
     <section id="home" class="page active">
       <div class="hero">
         <div class="hero-left">
           <h2 class="reveal">Hi — I'm <span class="accent">Manish Subhash Kadam</span></h2>
-          <p class="reveal delay">A CYSE 3rd year student building clean, animated web experiences.</p>
+          <p class="reveal delay">A CYSE 3rd year student building clean, animated web experiences with a focus on cybersecurity and modern design.</p>
           <div class="cta reveal delay-2">
-            <a class="btn" href="#contact" data-page="contact">Get in touch</a>
-            <a class="btn outline" href="https://github.com/manishkadam29" target="_blank">View GitHub</a>
+            <a class="btn" href="#contact" onclick="navigateTo('contact')">Get in touch</a>
+            <a class="btn outline" href="https://github.com/manishkadam29" target="_blank" rel="noopener">View GitHub</a>
           </div>
         </div>
         <div class="hero-right">
-          <!-- animated profile blob -->
           <div class="profile-blob" aria-hidden="true">
-            <img src="assets/profile.svg" alt="Profile illustration">
+            <img src="assets/profile.svg" alt="Profile illustration" onerror="this.style.display='none'">
           </div>
         </div>
       </div>
+
       <div class="features">
         <div class="feature-card reveal">
+          <div class="feature-icon">⚡</div>
           <h3>Interactive UI</h3>
-          <p>Smooth page transitions and micro-interactions.</p>
+          <p>Smooth page transitions and micro-interactions that enhance user experience.</p>
         </div>
         <div class="feature-card reveal delay">
+          <div class="feature-icon">♿</div>
           <h3>Accessible</h3>
-          <p>Semantic HTML, keyboard navigable and responsive.</p>
+          <p>Semantic HTML, keyboard navigable and responsive across all devices.</p>
         </div>
         <div class="feature-card reveal delay-2">
+          <div class="feature-icon">✨</div>
           <h3>Polished Animations</h3>
           <p>CSS and JS driven animations that enhance — not distract.</p>
         </div>
       </div>
     </section>
 
+    <!-- About Page -->
     <section id="about" class="page">
       <div class="container">
-        <h2 class="section-title reveal">About</h2>
+        <h2 class="section-title reveal">About Me</h2>
         <div class="about-grid">
           <div class="card reveal">
             <h3>Who I am</h3>
-            <p>My name is <strong>Manish Subhash Kadam</strong>. I am a 3rd year CYSE student passionate about software engineering, cybersecurity concepts, and building delightful web interfaces.</p>
+            <p>My name is <strong>Manish Subhash Kadam</strong>. I am a 3rd year CYSE student passionate about software engineering, cybersecurity concepts, and building delightful web interfaces that users love.</p>
+            <p>I enjoy solving complex problems and creating secure, user-friendly applications.</p>
           </div>
           <div class="card reveal delay">
-            <h3>Skills</h3>
+            <h3>Technical Skills</h3>
             <ul>
-              <li>HTML, CSS, JavaScript (ES6+)</li>
+              <li>HTML5, CSS3, JavaScript (ES6+)</li>
               <li>Responsive design & animations</li>
-              <li>Version control (Git) — GitHub: <a href="https://github.com/manishkadam29" target="_blank">manishkadam29</a></li>
-              <li>Basic cybersecurity concepts & systems</li>
+              <li>Version control (Git/GitHub)</li>
+              <li>Cybersecurity fundamentals</li>
+              <li>Web security best practices</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Projects Page -->
     <section id="projects" class="page">
       <div class="container">
-        <h2 class="section-title reveal">Projects</h2>
+        <h2 class="section-title reveal">Featured Projects</h2>
+        <p class="subtitle reveal delay">A collection of my recent work and experiments</p>
         <div id="projectsGrid" class="projects-grid">
           <!-- projects populated by JS -->
         </div>
       </div>
     </section>
 
+    <!-- Articles Page -->
     <section id="articles" class="page">
       <div class="container">
         <h2 class="section-title reveal">Articles & Notes</h2>
+        <p class="subtitle reveal delay">Thoughts on web development and cybersecurity</p>
         <div class="articles-list" id="articlesList">
-          <!-- example articles -->
           <article class="reveal">
+            <div class="article-meta">
+              <span class="article-date">October 2025</span>
+              <span class="article-tag">Web Development</span>
+            </div>
             <h3>Understanding Web Animations</h3>
-            <p>Short note on performance-friendly animation techniques and when to use CSS vs JS.</p>
-            <a class="readmore" href="#" onclick="return false;">Read more</a>
+            <p>Short note on performance-friendly animation techniques and when to use CSS vs JS for optimal results.</p>
+            <a class="readmore" href="#" onclick="return false;">Read more →</a>
           </article>
           <article class="reveal delay">
+            <div class="article-meta">
+              <span class="article-date">September 2025</span>
+              <span class="article-tag">Security</span>
+            </div>
             <h3>Intro to Secure Coding Practices</h3>
-            <p>Checklist for avoiding common security pitfalls in student projects.</p>
-            <a class="readmore" href="#" onclick="return false;">Read more</a>
+            <p>Essential checklist for avoiding common security pitfalls in student projects and real-world applications.</p>
+            <a class="readmore" href="#" onclick="return false;">Read more →</a>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- Contact Page -->
     <section id="contact" class="page">
       <div class="container narrow">
-        <h2 class="section-title reveal">Contact</h2>
-        <p class="reveal">Let's connect — find me on LinkedIn or send an email.</p>
+        <h2 class="section-title reveal">Get In Touch</h2>
+        <p class="subtitle reveal delay">Let's connect — find me on social platforms or send an email.</p>
+        
         <div class="contact-cards">
-          <a class="card reveal" href="https://www.linkedin.com/in/manish-kadam29" target="_blank">
+          <a class="card reveal" href="https://www.linkedin.com/in/manish-kadam29" target="_blank" rel="noopener">
+            <div class="contact-icon">💼</div>
             <strong>LinkedIn</strong>
             <span>linkedin.com/in/manish-kadam29</span>
           </a>
-          <a class="card reveal delay" href="https://github.com/manishkadam29" target="_blank">
+          <a class="card reveal delay" href="https://github.com/manishkadam29" target="_blank" rel="noopener">
+            <div class="contact-icon">💻</div>
             <strong>GitHub</strong>
             <span>github.com/manishkadam29</span>
           </a>
           <div class="card reveal delay-2">
+            <div class="contact-icon">📧</div>
             <strong>Email</strong>
             <span><a href="mailto:manish.kadam18440@sakec.ac.in">manish.kadam18440@sakec.ac.in</a></span>
           </div>
         </div>
+
         <form id="contactForm" class="reveal delay-3" onsubmit="handleContact(event)">
-          <label>
-            Your Name
-            <input name="name" placeholder="Your name">
-          </label>
-          <label>
-            Message
-            <textarea name="message" placeholder="Hi Manish —"></textarea>
-          </label>
-          <button class="btn" type="submit">Send (demo)</button>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input id="email" name="email" type="email" placeholder="your.email@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Hi Manish — " rows="5" required></textarea>
+          </div>
+          <button class="btn" type="submit">Send Message</button>
         </form>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>Built with care • <a href="https://github.com/manishkadam29" target="_blank">GitHub</a> • <a href="https://www.linkedin.com/in/manish-kadam29" target="_blank">LinkedIn</a></p>
+    <p>© 2025 Manish Kadam • Built with care • <a href="https://github.com/manishkadam29" target="_blank" rel="noopener">GitHub</a> • <a href="https://www.linkedin.com/in/manish-kadam29" target="_blank" rel="noopener">LinkedIn</a></p>
   </footer>
 
   <script src="js/app.js"></script>

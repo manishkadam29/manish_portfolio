@@ -1,99 +1,162 @@
-
-// Simple SPA navigation + animated reveals
+// DOM Elements
 const pages = document.querySelectorAll('.page');
 const links = document.querySelectorAll('.menu a');
-const revealables = () => document.querySelectorAll('.reveal');
+const menu = document.getElementById('mainMenu');
+const hamburger = document.getElementById('hamburger');
 
-function setActive(pageId){
+// Navigation function
+function setActive(pageId) {
   pages.forEach(p => {
-    if(p.id === pageId){ p.classList.add('active'); p.style.display='block' }
-    else { p.classList.remove('active') }
+    if (p.id === pageId) {
+      p.classList.add('active');
+      p.style.display = 'block';
+      // Trigger animation
+      setTimeout(() => runReveal(), 10);
+    } else {
+      p.classList.remove('active');
+      p.style.display = 'none';
+    }
   });
-  links.forEach(l => l.classList.toggle('active', l.dataset.page===pageId));
-  runReveal();
+  
+  links.forEach(l => l.classList.toggle('active', l.dataset.page === pageId));
+  
+  // Close mobile menu
+  if (menu.classList.contains('active')) {
+    toggleMenu();
+  }
+  
+  // Scroll to top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// Menu links event listeners
 links.forEach(a => {
   a.addEventListener('click', (e) => {
+    e.preventDefault();
     const p = a.dataset.page;
     setActive(p);
-    history.pushState({page:p}, '', '#'+p);
+    history.pushState({ page: p }, '', '#' + p);
   });
 });
 
-// handle hash on load
+// Hamburger toggle
+hamburger.addEventListener('click', () => {
+  toggleMenu();
+});
+
+function toggleMenu() {
+  menu.classList.toggle('active');
+  hamburger.classList.toggle('active');
+  const isExpanded = menu.classList.contains('active');
+  hamburger.setAttribute('aria-expanded', isExpanded);
+}
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (menu.classList.contains('active') && 
+      !menu.contains(e.target) && 
+      !hamburger.contains(e.target)) {
+    toggleMenu();
+  }
+});
+
+// Handle hash on load
 window.addEventListener('load', () => {
-  const target = location.hash.replace('#','') || 'home';
+  const target = location.hash.replace('#', '') || 'home';
   setActive(target);
   populateProjects();
 });
 
-// handle popstate
+// Handle popstate (browser back/forward)
 window.addEventListener('popstate', (e) => {
-  const p = (e.state && e.state.page) || location.hash.replace('#','') || 'home';
+  const p = (e.state && e.state.page) || location.hash.replace('#', '') || 'home';
   setActive(p);
 });
 
-// reveal on scroll using IntersectionObserver
-function runReveal(){
-  const items = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver((entries, o) => {
+// Reveal on scroll using IntersectionObserver
+function runReveal() {
+  const items = document.querySelectorAll('.reveal:not(.show)');
+  
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if(entry.isIntersecting){
+      if (entry.isIntersecting) {
         entry.target.classList.add('show');
-        o.unobserve(entry.target);
+        observer.unobserve(entry.target);
       }
     });
-  }, {threshold:0.15});
-  items.forEach(i => obs.observe(i));
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+  
+  items.forEach(item => observer.observe(item));
 }
 
-// example projects (you should replace these with real projects)
+// Projects data
 const PROJECTS = [
   {
-    "title":"Animated Portfolio",
-    "desc":"A polished SPA portfolio with smooth transitions and accessibility in mind.",
-    "tech":["HTML","CSS","JS"],
-    "link":"#"
+    "title": "Secure Data Wiper",
+    "desc": "Cross-platform application for secure data deletion with tamper-proof certificates. Built for privacy-focused users.",
+    "tech": ["Python", "Cryptography", "Cross-Platform"],
+    "link": "#"
   },
   {
-    "title":"Secure Notes (Demo)",
-    "desc":"A small demo exploring secure storage patterns for local notes (concept).",
-    "tech":["JS","LocalStorage"],
-    "link":"#"
+    "title": "Animated Portfolio",
+    "desc": "A polished SPA portfolio with smooth transitions, accessibility features, and modern design principles.",
+    "tech": ["HTML", "CSS", "JavaScript"],
+    "link": "#"
   },
   {
-    "title":"Mini CTF Challenges",
-    "desc":"Problem set and writeups focused on beginner-friendly cybersecurity problems.",
-    "tech":["Python","Web"],
-    "link":"#"
+    "title": "Mini CTF Platform",
+    "desc": "Beginner-friendly cybersecurity challenges and writeups focused on common web vulnerabilities.",
+    "tech": ["Python", "Web Security", "Flask"],
+    "link": "#"
   }
 ];
 
-function populateProjects(){
+function populateProjects() {
   const grid = document.getElementById('projectsGrid');
   grid.innerHTML = '';
+  
   PROJECTS.forEach((p, idx) => {
     const node = document.createElement('div');
     node.className = 'project reveal';
-    node.innerHTML = `<h4>${p.title}</h4><p>${p.desc}</p><p class="muted">${p.tech.join(' • ')}</p><p><a class="readmore" href="${p.link}" onclick="return false;">Explore</a></p>`;
+    if (idx > 0) node.classList.add(idx === 1 ? 'delay' : 'delay-2');
+    
+    node.innerHTML = `
+      <h4>${p.title}</h4>
+      <p>${p.desc}</p>
+      <p class="muted">${p.tech.join(' • ')}</p>
+      <a class="readmore" href="${p.link}" onclick="return false;">Explore →</a>
+    `;
+    
     grid.appendChild(node);
   });
+  
   runReveal();
 }
 
-// simple contact form demo
-function handleContact(e){
+// Contact form handler
+function handleContact(e) {
   e.preventDefault();
   const form = e.target;
   const name = form.name.value || 'Friend';
-  alert('Thanks '+name+' — this is a demo contact form. Email: manish.kadam18440@sakec.ac.in');
+  const email = form.email.value;
+  
+  // Demo alert - replace with actual form submission
+  alert(`Thanks ${name}! This is a demo contact form.\n\nYour message would be sent from: ${email}\n\nFor now, please email me directly at:\nmanish.kadam18440@sakec.ac.in`);
+  
+  form.reset();
 }
 
-// theme toggle
-const themeToggle = document.getElementById('themeToggle');
-themeToggle.addEventListener('click', () => {
-  document.documentElement.classList.toggle('light');
-  // brief visual feedback
-  themeToggle.animate([{transform:'rotate(0)'},{transform:'rotate(360deg)'}],{duration:500});
+// Helper function for navigation from buttons
+function navigateTo(page) {
+  setActive(page);
+  history.pushState({ page: page }, '', '#' + page);
+  return false;
+}
+
+// Initialize reveals on page load
+document.addEventListener('DOMContentLoaded', () => {
+  runReveal();
 });
