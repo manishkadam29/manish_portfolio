@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Applications of Finite Automata - Manish Kadam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/article.css">
+  <meta name="description" content="Exploring applications of finite automata in text search and pattern matching.">
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="48"/>
+          <path d="M30 50 L45 35 L60 50 L45 65 Z" fill="var(--accent)" opacity="0.3"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <h1>Manish Kadam</h1>
+        <p>CYSE — 3rd year</p>
+      </div>
+    </div>
+    
+    <nav class="menu">
+      <a href="../index.html#home">Home</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#articles" class="active">Articles</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="article-main">
+    <article class="article-container">
+      <div class="article-header">
+        <a href="../index.html#articles" class="back-link">← Back to Articles</a>
+        <div class="article-meta">
+          <span class="article-date">📅 October 15, 2025</span>
+          <span class="article-tag">Computer Science</span>
+          <span class="article-read-time">⏱️ 5 min read</span>
+        </div>
+        <h1 class="article-title">Applications of Finite Automata in Text Search and Pattern Matching</h1>
+        <p class="article-subtitle">In computer science, finite automata provide a systematic and efficient way of solving searching and pattern-matching problems. This article explores their applications in text search, pattern recognition, and modern computational tasks.</p>
+      </div>
+
+      <div class="article-content">
+        <section>
+          <h2>Introduction</h2>
+          <p>In computer science, <strong>Discrete Structures and Graph Theory</strong> provide the foundation for various computational models. One of the most important models is the <strong>Finite Automaton (FA)</strong>. A finite automaton is a mathematical model of computation used to represent and manipulate sets of input strings. It plays a central role in pattern recognition, lexical analysis, string searching, and text processing.</p>
+          
+          <p>The importance of finite automata lies in their ability to provide a systematic and efficient way of solving searching and pattern-matching problems. In this article, we explore the concept of finite automata, their applications in text search and pattern matching, and their relevance in modern computer science.</p>
+        </section>
+
+        <section>
+          <h2>Concept of Finite Automata</h2>
+          <p>A Finite Automaton (FA) is a simple machine with:</p>
+          <ul>
+            <li><strong>A finite set of states</strong> - The automaton can be in one of a limited number of states at any time.</li>
+            <li><strong>An input alphabet</strong> - A set of symbols that the automaton can read.</li>
+            <li><strong>A transition function</strong> - Rules that determine how the automaton moves from one state to another based on input symbols.</li>
+            <li><strong>A start state</strong> - The initial state where processing begins.</li>
+            <li><strong>A set of accepting states</strong> - States that indicate successful pattern recognition.</li>
+          </ul>
+
+          <div class="code-block">
+            <pre><code>Example: Simple FA for pattern "ab"
+States: {q0, q1, q2}
+Alphabet: {a, b}
+Start State: q0
+Accept State: q2
+
+Transitions:
+  q0 --a--> q1
+  q1 --b--> q2</code></pre>
+          </div>
+        </section>
+
+        <section>
+          <h2>Applications in Text Search</h2>
+          
+          <h3>1. Pattern Matching Algorithms</h3>
+          <p>Finite automata are used in algorithms like the <strong>Knuth-Morris-Pratt (KMP)</strong> and <strong>Aho-Corasick</strong> algorithms for efficient pattern matching in text. These algorithms construct a finite automaton from the pattern and then use it to scan through the text in linear time.</p>
+
+          <h3>2. Lexical Analysis in Compilers</h3>
+          <p>Compilers use finite automata to recognize tokens (keywords, identifiers, operators) in source code. This is the first phase of compilation where the source code is broken down into meaningful units.</p>
+
+          <h3>3. Regular Expression Matching</h3>
+          <p>Regular expressions are patterns used to match strings. They can be converted into finite automata, making pattern matching efficient. Tools like grep, sed, and programming language regex libraries use this approach.</p>
+
+          <h3>4. Network Protocol Analysis</h3>
+          <p>Finite automata are used in network intrusion detection systems to match patterns in network traffic and identify potential security threats.</p>
+        </section>
+
+        <section>
+          <h2>Real-World Examples</h2>
+          
+          <div class="example-box">
+            <h4>Search Engines</h4>
+            <p>Search engines use finite automata-based algorithms to quickly match user queries against billions of web pages.</p>
+          </div>
+
+          <div class="example-box">
+            <h4>Text Editors</h4>
+            <p>Text editors like VS Code, Sublime Text use finite automata for "find and replace" functionality and syntax highlighting.</p>
+          </div>
+
+          <div class="example-box">
+            <h4>DNA Sequence Analysis</h4>
+            <p>Bioinformatics applications use pattern matching with finite automata to search for specific sequences in DNA strands.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Advantages of Using Finite Automata</h2>
+          <ul>
+            <li><strong>Efficiency:</strong> Linear time complexity O(n) for text scanning</li>
+            <li><strong>Deterministic behavior:</strong> Predictable and consistent results</li>
+            <li><strong>Easy to implement:</strong> Simple state transition logic</li>
+            <li><strong>Versatile:</strong> Applicable to various domains from compilers to network security</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Conclusion</h2>
+          <p>Finite automata are fundamental tools in computer science for solving text search and pattern matching problems efficiently. From compilers and text editors to search engines and bioinformatics, their applications are vast and critical to modern computing.</p>
+          
+          <p>Understanding finite automata provides a strong foundation for exploring more advanced topics like parsing theory, compiler design, and algorithm optimization.</p>
+        </section>
+
+        <div class="article-tags">
+          <span class="tag">Finite Automata</span>
+          <span class="tag">Pattern Matching</span>
+          <span class="tag">Algorithms</span>
+          <span class="tag">Computer Science</span>
+          <span class="tag">Text Processing</span>
+        </div>
+      </div>
+
+      <div class="article-footer">
+        <div class="author-box">
+          <div class="author-info">
+            <h3>Written by Manish Subhash Kadam</h3>
+            <p>CYSE 3rd year student passionate about cybersecurity, algorithms, and web development.</p>
+          </div>
+          <div class="social-share">
+            <a href="../index.html#contact" class="btn">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Manish Kadam • <a href="../index.html">Home</a> • <a href="https://github.com/manishkadam29" target="_blank" rel="noopener">GitHub</a> • <a href="https://www.linkedin.com/in/manish-kadam29" target="_blank" rel="noopener">LinkedIn</a></p>
+  </footer>
+</body>
+</html>

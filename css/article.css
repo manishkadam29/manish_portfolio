@@ -1,0 +1,244 @@
+/* Article Page Specific Styles */
+
+.article-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.article-container {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), transparent);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Article Header */
+.article-header {
+  padding: 3rem 3rem 2rem;
+  background: linear-gradient(135deg, rgba(125, 211, 252, 0.05), transparent);
+  border-bottom: 1px solid var(--border);
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  color: var(--accent-light);
+  transform: translateX(-4px);
+}
+
+.article-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.article-date,
+.article-read-time {
+  color: var(--muted);
+}
+
+.article-tag {
+  background: rgba(125, 211, 252, 0.1);
+  color: var(--accent);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.article-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.article-subtitle {
+  font-size: 1.2rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Article Content */
+.article-content {
+  padding: 3rem;
+}
+
+.article-content section {
+  margin-bottom: 3rem;
+}
+
+.article-content h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.5rem;
+}
+
+.article-content h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem;
+  color: var(--accent-light);
+}
+
+.article-content h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.article-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+}
+
+.article-content ul,
+.article-content ol {
+  margin: 1rem 0 1.5rem 1.5rem;
+  color: var(--muted);
+}
+
+.article-content li {
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+}
+
+.article-content strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Code Blocks */
+.code-block {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.code-block pre {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--accent-light);
+}
+
+.code-block code {
+  color: var(--accent-light);
+}
+
+/* Example Boxes */
+.example-box {
+  background: linear-gradient(135deg, rgba(125, 211, 252, 0.05), transparent);
+  border-left: 4px solid var(--accent);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+}
+
+.example-box h4 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.example-box p {
+  margin-bottom: 0;
+}
+
+/* Tags */
+.article-tags {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.tag {
+  background: rgba(125, 211, 252, 0.1);
+  color: var(--accent);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  background: rgba(125, 211, 252, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Article Footer */
+.article-footer {
+  padding: 2rem 3rem 3rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), transparent);
+  border-top: 1px solid var(--border);
+}
+
+.author-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.author-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.author-info p {
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .article-header,
+  .article-content,
+  .article-footer {
+    padding: 2rem 1.5rem;
+  }
+
+  .article-title {
+    font-size: 1.8rem;
+  }
+
+  .article-subtitle {
+    font-size: 1rem;
+  }
+
+  .article-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .author-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
