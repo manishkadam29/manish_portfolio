@@ -36,9 +36,11 @@
       <a data-page="about">About</a>
       <a data-page="projects">Projects</a>
       <a data-page="articles">Articles</a>
+      <a data-page="videos">Videos</a>
       <a data-page="contact">Contact</a>
     </nav>
   </header>
+
 
   <main id="app">
     <!-- Home Page -->
@@ -59,6 +61,7 @@
         </div>
       </div>
 
+
       <div class="features">
         <div class="feature-card reveal">
           <div class="feature-icon">⚡</div>
@@ -77,6 +80,7 @@
         </div>
       </div>
     </section>
+
 
     <!-- About Page -->
     <section id="about" class="page">
@@ -102,6 +106,7 @@
       </div>
     </section>
 
+
     <!-- Projects Page -->
     <section id="projects" class="page">
       <div class="container">
@@ -113,14 +118,15 @@
       </div>
     </section>
 
-    <!-- Articles Page - 🔥 THIS IS THE UPDATED SECTION 🔥 -->
+
+    <!-- Articles Page -->
     <section id="articles" class="page">
       <div class="container">
         <h2 class="section-title reveal">Articles & Notes</h2>
         <p class="subtitle reveal delay">Thoughts on web development, cybersecurity, and computer science</p>
         <div class="articles-list" id="articlesList">
           
-          <!-- Article 1 - NEW: Finite Automata -->
+          <!-- Article 1 - Finite Automata -->
           <article class="reveal">
             <div class="article-meta">
               <span class="article-date">October 2025</span>
@@ -131,37 +137,108 @@
             <a class="readmore" href="articles/article-1.html">Read Full Article →</a>
           </article>
 
-          <!-- Article 2 - Dark Web Investigations (NEW) -->
-<article class="reveal delay">
-  <div class="article-meta">
-    <span class="article-date">October 2025</span>
-    <span class="article-tag">Cyber Crime & Forensics</span>
-  </div>
-  <h3>Dark Web Investigations: Tools, Techniques, and Challenges</h3>
-  <p>A comprehensive exploration of investigative methods, forensic tools, and obstacles faced by cybercrime investigators when navigating the anonymous layers of the internet.</p>
-  <a class="readmore" href="articles/article-2.html">Read Full Article →</a>
-</article>
+          <!-- Article 2 - Dark Web Investigations -->
+          <article class="reveal delay">
+            <div class="article-meta">
+              <span class="article-date">October 2025</span>
+              <span class="article-tag">Cyber Crime & Forensics</span>
+            </div>
+            <h3>Dark Web Investigations: Tools, Techniques, and Challenges</h3>
+            <p>A comprehensive exploration of investigative methods, forensic tools, and obstacles faced by cybercrime investigators when navigating the anonymous layers of the internet.</p>
+            <a class="readmore" href="articles/article-2.html">Read Full Article →</a>
+          </article>
 
-<!-- Article 3 - Data Mining for Fraud Detection (NEW) -->
-<article class="reveal delay-2">
-  <div class="article-meta">
-    <span class="article-date">October 2025</span>
-    <span class="article-tag">Data Warehousing & Mining</span>
+          <!-- Article 3 - Data Mining for Fraud Detection -->
+          <article class="reveal delay-2">
+            <div class="article-meta">
+              <span class="article-date">October 2025</span>
+              <span class="article-tag">Data Warehousing & Mining</span>
+            </div>
+            <h3>Data Mining for Fraud Detection: Techniques and Case Studies</h3>
+            <p>How data mining is transforming fraud detection in finance and insurance, with real-world examples and best practices for modern organizations.</p>
+            <a class="readmore" href="articles/article-3.html">Read Full Article →</a>
+          </article>
+
+          <!-- Article 4 - UML Class and Interaction Diagrams -->
+          <article class="reveal delay-3">
+            <div class="article-meta">
+              <span class="article-date">October 2025</span>
+              <span class="article-tag">Software Engineering Project Management</span>
+            </div>
+            <h3>Introduction to UML: Class and Interaction Diagrams</h3>
+            <p>A comprehensive guide to UML class and interaction diagrams with deep dive into sequence diagrams, real-life applications in e-commerce, banking, and microservices, and their importance in software project management.</p>
+            <a class="readmore" href="articles/article-4.html">Read Full Article →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Videos Page - NEW SECTION -->
+<section id="videos" class="page">
+  <div class="container">
+    <h2 class="section-title reveal">Video Presentations</h2>
+    <p class="subtitle reveal delay">Educational content on cybersecurity, software engineering, and computer science topics</p>
+    
+    <div class="videos-grid">
+      <!-- Video Card 1 - TC & CD -->
+      <div class="video-card reveal">
+        <div class="video-wrapper">
+          <img src="assets/tccd-thumbnail.png" alt="Theory of Computation & Compiler Design">
+        </div>
+        <div class="video-info">
+          <h3>Theory of Computation & Compiler Design</h3>
+          <p>Applications of Finite Automata in Text Search and Pattern Matching</p>
+          <a href="https://drive.google.com/file/d/1G5KZxfgX0B3g7LcI42t_X_3Gxt-KYNqM/view?usp=sharing" target="_blank" rel="noopener" class="watch-btn">
+            ▶ Watch Full Video
+          </a>
+        </div>
+      </div>
+
+      <!-- Video Card 2 - SEPM -->
+      <div class="video-card reveal delay">
+        <div class="video-wrapper">
+          <img src="assets/sepm-thumbnail.jpg" alt="Software Engineering Project Management">
+        </div>
+        <div class="video-info">
+          <h3>Software Engineering Project Management</h3>
+          <p>Introduction to UML: Class and Interaction Diagrams</p>
+          <a href="https://drive.google.com/file/d/YOUR_SEPM_FILE_ID/view?usp=sharing" target="_blank" rel="noopener" class="watch-btn">
+            ▶ Watch Full Video
+          </a>
+        </div>
+      </div>
+
+      <!-- Video Card 3 - CCIDF -->
+      <div class="video-card reveal delay-2">
+        <div class="video-wrapper">
+          <img src="assets/ccidf-thumbnail.jpg" alt="Cyber Crime Investigation & Digital Forensics">
+        </div>
+        <div class="video-info">
+          <h3>Cyber Crime Investigation & Digital Forensics</h3>
+          <p>Dark Web Investigations: Tools, Techniques, and Challenges</p>
+          <a href="https://drive.google.com/file/d/YOUR_CCIDF_FILE_ID/view?usp=sharing" target="_blank" rel="noopener" class="watch-btn">
+            ▶ Watch Full Video
+          </a>
+        </div>
+      </div>
+
+      <!-- Video Card 4 - DWM -->
+      <div class="video-card reveal delay-3">
+        <div class="video-wrapper">
+          <img src="assets/dwm-thumbnail.jpg" alt="Data Warehousing & Mining">
+        </div>
+        <div class="video-info">
+          <h3>Data Warehousing & Mining</h3>
+          <p>Data Mining for Fraud Detection: Techniques and Case Studies</p>
+          <a href="https://drive.google.com/file/d/YOUR_DWM_FILE_ID/view?usp=sharing" target="_blank" rel="noopener" class="watch-btn">
+            ▶ Watch Full Video
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
-  <h3>Data Mining for Fraud Detection: Techniques and Case Studies</h3>
-  <p>How data mining is transforming fraud detection in finance and insurance, with real-world examples and best practices for modern organizations.</p>
-  <a class="readmore" href="articles/article-3.html">Read Full Article →</a>
-</article>
-<!-- Article 4 - UML Class and Interaction Diagrams (NEW) -->
-<article class="reveal delay-3">
-  <div class="article-meta">
-    <span class="article-date">October 2025</span>
-    <span class="article-tag">Software Engineering Project Management</span>
-  </div>
-  <h3>Introduction to UML: Class and Interaction Diagrams</h3>
-  <p>A comprehensive guide to UML class and interaction diagrams with deep dive into sequence diagrams, real-life applications in e-commerce, banking, and microservices, and their importance in software project management.</p>
-  <a class="readmore" href="articles/article-4.html">Read Full Article →</a>
-</article>
+</section>
 
 
     <!-- Contact Page -->
@@ -188,6 +265,7 @@
           </div>
         </div>
 
+
         <form id="contactForm" class="reveal delay-3" onsubmit="handleContact(event)">
           <div class="form-group">
             <label for="name">Your Name</label>
@@ -207,9 +285,11 @@
     </section>
   </main>
 
+
   <footer class="footer">
     <p>© 2025 Manish Kadam • Built with care • <a href="https://github.com/manishkadam29" target="_blank" rel="noopener">GitHub</a> • <a href="https://www.linkedin.com/in/manish-kadam29" target="_blank" rel="noopener">LinkedIn</a></p>
   </footer>
+
 
   <script src="js/app.js"></script>
 </body>
