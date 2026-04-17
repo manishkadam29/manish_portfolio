@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Manish Subhash Kadam — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Portfolio of Manish Subhash Kadam — CYSE 3rd year student passionate about cybersecurity and web development.">
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="48"/>
+          <path d="M30 50 L45 35 L60 50 L45 65 Z" fill="var(--accent)" opacity="0.3"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <h1>Manish Kadam</h1>
+        <p>CYSE — 3rd year</p>
+      </div>
+    </div>
+    
+    <button id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <nav class="menu" id="mainMenu">
+      <a data-page="home" class="active">Home</a>
+      <a data-page="about">About</a>
+      <a data-page="projects">Projects</a>
+      <a data-page="articles">Articles</a>
+      <a data-page="videos">Videos</a>
+      <a data-page="contact">Contact</a>
+    </nav>
+  </header>
+
+
+  <main id="app">
+    <!-- Home Page -->
+    <section id="home" class="page active">
+      <div class="hero">
+        <div class="hero-left">
+          <h2 class="reveal">Hi — I'm <span class="accent">Manish Subhash Kadam</span></h2>
+          <p class="reveal delay">A CYSE 3rd year student building clean, animated web experiences with a focus on cybersecurity and modern design.</p>
+          <div class="cta reveal delay-2">
+            <a class="btn" href="#contact" onclick="navigateTo('contact')">Get in touch</a>
+            <a class="btn outline" href="https://github.com/manishkadam29" target="_blank" rel="noopener">View GitHub</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="profile-blob" aria-hidden="true">
+            <img src="assets/profile.svg" alt="Profile illustration" onerror="this.style.display='none'">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="features">
+        <div class="feature-card reveal">
+          <div class="feature-icon">⚡</div>
+          <h3>Interactive UI</h3>
+          <p>Smooth page transitions and micro-interactions that enhance user experience.</p>
+        </div>
+        <div class="feature-card reveal delay">
+          <div class="feature-icon">♿</div>
+          <h3>Accessible</h3>
+          <p>Semantic HTML, keyboard navigable and responsive across all devices.</p>
+        </div>
+        <div class="feature-card reveal delay-2">
+          <div class="feature-icon">✨</div>
+          <h3>Polished Animations</h3>
+          <p>CSS and JS driven animations that enhance — not distract.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- About Page -->
+    <section id="about" class="page">
+      <div class="container">
+        <h2 class="section-title reveal">About Me</h2>
+        <div class="about-grid">
+          <div class="card reveal">
+            <h3>Who I am</h3>
+            <p>My name is <strong>Manish Subhash Kadam</strong>. I am a 3rd year CYSE student passionate about software engineering, cybersecurity concepts, and building delightful web interfaces that users love.</p>
+            <p>I enjoy solving complex problems and creating secure, user-friendly applications.</p>
+          </div>
+          <div class="card reveal delay">
+            <h3>Technical Skills</h3>
+            <ul>
+              <li>HTML5, CSS3, JavaScript (ES6+)</li>
+              <li>Responsive design & animations</li>
+              <li>Version control (Git/GitHub)</li>
+              <li>Cybersecurity fundamentals</li>
+              <li>Web security best practices</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Projects Page -->
+    <section id="projects" class="page">
+      <div class="container">
+        <h2 class="section-title reveal">Featured Projects</h2>
+        <p class="subtitle reveal delay">A collection of my recent work and experiments</p>
+        <div id="projectsGrid" class="projects-grid">
+          <!-- projects populated by JS -->
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Articles Page -->
+    <section id="articles" class="page">
+      <div class="container">
+        <h2 class="section-title reveal">Articles & Notes</h2>
+        <p class="subtitle reveal delay">Thoughts on web development, cybersecurity, and computer science</p>
+        <div class="articles-list" id="articlesList">
+          
+          <!-- Article 1 - Finite Automata -->
+          <article class="reveal">
+            <div class="article-meta">
+              <span class="article-date">October 2025</span>
+              <span class="article-tag">Computer Science</span>
+            </div>
+            <h3>Applications of Finite Automata in Text Search and Pattern Matching</h3>
+            <p>In computer science, finite automata provide a systematic and efficient way of solving searching and pattern-matching problems. This article explores their applications in text search, pattern recognition, and modern computational tasks.</p>
+            <a class="readmore" href="articles/article-1.html">Read Full Article →</a>
+          </article>
+
+          <!-- Article 2 - Dark Web Investigations -->
+          <article class="reveal delay">
+            <div class="article-meta">
+              <span class="article-date">October 2025</span>
+              <span class="article-tag">Cyber Crime & Forensics</span>
+            </div>
+            <h3>Dark Web Investigations: Tools, Techniques, and Challenges</h3>
+            <p>A comprehensive exploration of investigative methods, forensic tools, and obstacles faced by cybercrime investigators when navigating the anonymous layers of the internet.</p>
+            <a class="readmore" href="articles/article-2.html">Read Full Article →</a>
+          </article>
+
+          <!-- Article 3 - Data Mining for Fraud Detection -->
+          <article class="reveal delay-2">
+            <div class="article-meta">
+              <span class="article-date">October 2025</span>
+              <span class="article-tag">Data Warehousing & Mining</span>
+            </div>
+            <h3>Data Mining for Fraud Detection: Techniques and Case Studies</h3>
+            <p>How data mining is transforming fraud detection in finance and insurance, with real-world examples and best practices for modern organizations.</p>
+            <a class="readmore" href="articles/article-3.html">Read Full Article →</a>
+          </article>
+
+          <!-- Article 4 - UML Class and Interaction Diagrams -->
+          <article class="reveal delay-3">
+            <div class="article-meta">
+              <span class="article-date">October 2025</span>
+              <span class="article-tag">Software Engineering Project Management</span>
+            </div>
+            <h3>Introduction to UML: Class and Interaction Diagrams</h3>
+            <p>A comprehensive guide to UML class and interaction diagrams with deep dive into sequence diagrams, real-life applications in e-commerce, banking, and microservices, and their importance in software project management.</p>
+            <a class="readmore" href="articles/article-4.html">Read Full Article →</a>
+          </article>
+       
+    <!-- Article 5 - Applications of AI in Cyber Security -->
+    <article class="reveal delay-4">
+  <div class="article-meta">
+    <span class="article-date">October 2025</span>
+    <span class="article-tag">Cyber Security Principles & Practices</span>
+  </div>
+  <h3>Applications of AI in Cyber Security</h3>
+  <p>Artificial Intelligence (AI) is revolutionizing cyber security by enabling real-time threat detection, intelligent anomaly analysis, and automated defense mechanisms. This article explores how AI-driven approaches protect networks, detect advanced malware, and anticipate future attacks in complex digital environments.</p>
+  <a class="readmore" href="articles/article-5.html">Read Full Article →</a>
+</article>
+</div>
+</div>
+</section>
+
+    <!-- Videos Page - NEW SECTION -->
+<section id="videos" class="page">
+  <div class="container">
+    <h2 class="section-title reveal">Video Presentations</h2>
+    <p class="subtitle reveal delay">Educational content on cybersecurity, software engineering, and computer science topics</p>
+    
+    <div class="videos-grid">
+      <!-- Video Card 1 - TC & CD -->
+      <div class="video-card reveal">
+        <div class="video-wrapper">
+          <img src="assets/tccd-thumbnail.png" alt="Theory of Computation & Compiler Design">
+        </div>
+        <div class="video-info">
+          <h3>Theory of Computation & Compiler Design</h3>
+          <p>Applications of Finite Automata in Text Search and Pattern Matching</p>
+          <a href="https://drive.google.com/file/d/1G5KZxfgX0B3g7LcI42t_X_3Gxt-KYNqM/view?usp=sharing" target="_blank" rel="noopener" class="watch-btn">
+            ▶ Watch Full Video
+          </a>
+        </div>
+      </div>
+
+      <!-- Video Card 2 - SEPM -->
+      <div class="video-card reveal delay">
+        <div class="video-wrapper">
+          <img src="assets/sepm-thumbnail.png" alt="Software Engineering Project Management">
+        </div>
+        <div class="video-info">
+          <h3>Software Engineering Project Management</h3>
+          <p>Introduction to UML: Class and Interaction Diagrams</p>
+          <a href="https://drive.google.com/file/d/1G8souBxgAEaJKYKTDPrKun5YvWQiRqfc/view?usp=sharing" target="_blank" rel="noopener" class="watch-btn">
+            ▶ Watch Full Video
+          </a>
+        </div>
+      </div>
+
+      <!-- Video Card 3 - CCIDF -->
+      <div class="video-card reveal delay-2">
+        <div class="video-wrapper">
+          <img src="assets/ccidf-thumbnail.png" alt="Cyber Crime Investigation & Digital Forensics">
+        </div>
+        <div class="video-info">
+          <h3>Cyber Crime Investigation & Digital Forensics</h3>
+          <p>Dark Web Investigations: Tools, Techniques, and Challenges</p>
+          <a href="https://drive.google.com/file/d/19TgfpMWywwxoKasQOHAYI6orO90FKhon/view?usp=sharing" target="_blank" rel="noopener" class="watch-btn">
+            ▶ Watch Full Video
+          </a>
+        </div>
+      </div>
+
+      <!-- Video Card 4 - DWM -->
+      <div class="video-card reveal delay-3">
+        <div class="video-wrapper">
+          <img src="assets/dwm-thumbnail.png" alt="Data Warehousing & Mining">
+        </div>
+        <div class="video-info">
+          <h3>Data Warehousing & Mining</h3>
+          <p>Data Mining for Fraud Detection: Techniques and Case Studies</p>
+          <a href="https://drive.google.com/file/d/1dUmmOhrZ3Hq8yRQGUoooes_MhCEAInv8/view?usp=sharing" target="_blank" rel="noopener" class="watch-btn">
+            ▶ Watch Full Video
+          </a>
+        </div>
+      </div>
+    
+    <!-- Video Card 5-CSPP -->
+<div class="video-card reveal delay-4">
+  <div class="video-wrapper">
+    <img src="assets/cspp-thumbnail.png" alt="Cyber Security Principles and Practices">
+  </div>
+  <div class="video-info">
+    <h3>Cyber Security Principles and Practices</h3>
+    <p>Applications of AI in Cyber Security</p>
+    <a href="https://drive.google.com/file/d/152T-nVEtGqFX9ODwJWEnyu71wyMRX8GZ/view?usp=sharing" target="_blank" rel="noopener" class="watch-btn">
+      ▶ Watch Full Video
+    </a>
+  </div>
+</div>
+</div>
+</div>
+</section>
+    <!-- Contact Page -->
+    <section id="contact" class="page">
+      <div class="container narrow">
+        <h2 class="section-title reveal">Get In Touch</h2>
+        <p class="subtitle reveal delay">Let's connect — find me on social platforms or send an email.</p>
+        
+        <div class="contact-cards">
+          <a class="card reveal" href="https://www.linkedin.com/in/manish-kadam29" target="_blank" rel="noopener">
+            <div class="contact-icon">💼</div>
+            <strong>LinkedIn</strong>
+            <span>linkedin.com/in/manish-kadam29</span>
+          </a>
+          <a class="card reveal delay" href="https://github.com/manishkadam29" target="_blank" rel="noopener">
+            <div class="contact-icon">💻</div>
+            <strong>GitHub</strong>
+            <span>github.com/manishkadam29</span>
+          </a>
+          <div class="card reveal delay-2">
+            <div class="contact-icon">📧</div>
+            <strong>Email</strong>
+            <span><a href="mailto:manish.kadam18440@sakec.ac.in">manish.kadam18440@sakec.ac.in</a></span>
+          </div>
+        </div>
+
+
+        <form id="contactForm" class="reveal delay-3" onsubmit="handleContact(event)">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input id="email" name="email" type="email" placeholder="your.email@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Hi Manish — " rows="5" required></textarea>
+          </div>
+          <button class="btn" type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="footer">
+    <p>© 2025 Manish Kadam • Built with care • <a href="https://github.com/manishkadam29" target="_blank" rel="noopener">GitHub</a> • <a href="https://www.linkedin.com/in/manish-kadam29" target="_blank" rel="noopener">LinkedIn</a></p>
+  </footer>
+
+
+  <script src="js/app.js"></script>
+</body>
+</html>
